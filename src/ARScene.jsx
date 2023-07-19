@@ -1,13 +1,11 @@
-
 import React from 'react';
-import { Canvas, fog } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber'; // Remove 'fog' from the import statement
 import { Physics } from '@react-three/cannon';
 import { Box } from '@react-three/drei';
 
 const ARScene = () => {
   return (
-    <Canvas>
-      <fog attach="fog" args={['white', 10, 100]} />
+    <Canvas fog={['white', 10, 100]}> {/* Attach fog to Canvas */}
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       <Physics>
